@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request
-from travelzeus.dbtravel import getCities, getLocDetails, getCityAttractions
+from triippo.dbtravel import getCities, getLocDetails, getCityAttractions
 import pdb
 app = Flask(__name__)
 
