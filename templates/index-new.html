@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>TravelZeus - Intelligent Travel</title>
+        <meta name="description" content="Intelligent travel AI">
+        <style>
+            #in1 { 
+                border: 3px solid black;
+                border-collapse: collapse;
+            } 
+            .td1 {
+                border: 3px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="loginheader" align="right">
+            <a href="">Login</a>
+        </div>
+        <div>
+            <table height="100%" width="100%">
+                <tr height="30%">
+                    <td align="center">TravelZeus - Intelligent Travel</td>
+                </tr>
+                <tr width="100%">
+                    <td width="100%">
+                        <table id="in1" width="100%">
+                            <tr width="100%">
+                                <td width="50%" align="center" class="td1">
+                                    <form action="landing1">
+                                        Holidays in <input type="text" placeholder="London" required value="" name="location" list="locations"> <br>
+                                        Within this budget <input type="text" placeholder="500" required value="">
+                                        <button type="submit">Search</button>
+                                    </form>
+                                </td>
+                                <td align="center" width="50%" class="td1">
+                                    <form action="landing2">
+                                        Holidays from <input type="text" placeholder="London" required value="" name="location" list="locations"> <br>
+                                        Within this budget <input type="text" placeholder="500" required value="">
+                                        <button type="submit">Search</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr width="100%">
+                                <td width="50%" align="center" class="td1">
+                                    <form action="landing3">
+                                        Best time to visit <input type="text" placeholder="London" required value="" name="location" list="locations"> <br>
+                                        Within this budget <input type="text" placeholder="500" required value="">
+                                        <button type="submit">Search</button>
+                                    </form>
+                                </td>
+                                <td align="center" width="50%" class="td1">
+                                    <form  action="landing4">
+                                        Find me a cheap holiday <input type="text" placeholder="London" required value="" name="location" list="locations"> <br>
+                                        Within this budget <input type="text" placeholder="500" required value="">
+                                        <button type="submit">Search</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <datalist id="locations">
+                {% for cit in cities %}
+                  <option value="{{ cit[0] }}">{{ cit[1] }}</option>
+                {% endfor %}
+            </datalist>
+        </div>
+    </body>
+</html>

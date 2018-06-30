@@ -1,0 +1,3 @@
+- Info box is a custom library which provides a stylised view on the InfoWindow
+- There should be only 1 InfoWindows
+

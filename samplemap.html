@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+       .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+    </style>
+    <script>
+        function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+        function myFunction2() {
+    document.getElementById("myDropdown2").classList.toggle("show");
+}
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+        <div id="myDropdown2" class="dropdown-content">
+            <a href="#">Link 4</a>
+            <a href="#">Link 5</a>
+            <a href="#">Link 6</a>
+        </div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 51.507222, lng: -0.1275};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: uluru,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+      var infowindowopts = new google.maps.InfoWindowOptions();
+      infowindowopts.content = "default values";
+      var infowindow = new google.maps.InfoWindow( infowindowopts);
+      var marker = new google.maps.Marker({
+          position: {lat: 51.501476, lng: -0.140634},
+          map: map
+        });
+      google.maps.event.addListener(marker, 'click', function () {
+            infowindowopts.content = "Marker 1";
+            infowindow.setcontent( infowindowopts);
+            infowindow.open( map, marker);
+      });
+      var marker2 = new google.maps.Marker({
+          position: {lat: 51.490861, lng: -0.128456},
+          map: map
+        });
+    google.maps.event.addListener(marker2, 'click', function () {
+        infowindowopts.content = "Marker 2";
+        infowindow.setcontent( infowindowopts);
+        infowindow.open( map, marker2);
+      });
+    }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_v5dm8iJmsISKiSEy5l7fzZNicZ0HwTk&callback=initMap">
+    </script>
+  </body>
+</html>`    

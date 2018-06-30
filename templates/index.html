@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TravelZeus - Intelligent Travel</title>
+<meta name="description" content="Intelligent travel AI">
+<link href="static/css/main.css" rel="stylesheet">
+</head>
+<body>
+
+<!--main-->
+<section class="main">
+    <div>        
+        <!--welcome-message-->
+        <header>
+          <h1>TravelZeus - Intelligent Travel</h1>
+        </header>
+        <!--welcome-message end--> 
+            <div height="40%">
+              <h1>TravelZeus</h1>              
+            </div>
+            <div top="40%" border="1px solid">
+              <div width="50%" border="1px solid" height="50%" style="float: left;">
+                  <h1>have a place in mind -> use search below</h1>
+                <form role="form" id="mc-form" action="landing1">
+                  <input class="form-control" placeholder="London" required value="" name="location" list="locations">
+                  <button type="submit">Search</button>
+                  <datalist id="locations">
+                    {% for cit in cities %}
+                      <option value="{{ cit[0] }}">{{ cit[1] }}</option>
+                    {% endfor %}
+                  </datalist>
+                </form>
+              </div>
+              <div width="50%" border="1px solid" height="50%" style="float: left;">
+                  <h1>have a budget, no specific place</h1>
+                  <form id="budget-form" name="budget-form" action="landing2">
+                      <input placeholder="500" required value="" name="budget">
+                      <input name="todate" required value="">
+                      <input name="fromdate" required value="">
+                      <button type="submit">Search</button>
+                   </form>
+              </div>
+            </div>
+            <div top="40%" border="1px solid" >
+              <div width="50%" border="1px solid" height="50%" style="float: left;">
+                  <h1>have a budget and a place, no specific time</h1>
+                  <form id="time-form" name="time-form" action="landing3">
+                      <input name="place" placeholder="London" required value="">
+                      <input name="budget" placeholder="500" required value="">
+                      <button type="submit">Search</button>
+                  </form>
+              </div>
+              <div width="50%" border="1px solid" height="50%" style="float: left;">
+                  <h1>need something this weekend</h1>
+                  <h1>cheaper places around this city</h1>
+                  <h1>other people travelling to the same place - hook up</h1>
+                  <form id="weekend-form" name="weekend-form" action="landing4">
+                      <input placeholder="London" required value="" name="startloc">
+                      <button type="submit">Search</button>
+                  </form>
+              </div>
+              </div>
+            </div>            
+        <!--sub-form end-->         
+    </div>
+  </div>
+</section>
+<!--main end--> 
+</body>
+</html>
